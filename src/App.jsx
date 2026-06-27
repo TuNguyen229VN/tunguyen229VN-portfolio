@@ -3,11 +3,13 @@ import Lanyard from "./components/Lanyard"
 import MainContent from "./components/MainContent"
 import { dockItems } from "./constants/Constants"
 import { useDarkMode } from "./hooks/useDarkMode"
+import { useIsLargeScreen } from "./hooks/useIsLargeScreen"
 
 
 
 function App() {
-  const { isDark, toggle } = useDarkMode()
+  const { isDark, toggle } = useDarkMode();
+  const isLargeScreen = useIsLargeScreen()
   return (
     <div className="bg-white dark:bg-[#121212] relative transition-colors duration-300">
       <div style={{ position: 'fixed', bottom: 0, left: 0, right: 0, zIndex: 50 }}>
@@ -19,16 +21,18 @@ function App() {
         />
       </div>
       <MainContent />
-      <div className="hidden lg:block absolute inset-0">
-        <Lanyard
-          position={[0, 0, 20]}
-          gravity={[0, -40, 0]}
-          frontImage="/images/avt-front.png"
-          backImage="/images/avt-back.png"
-          imageFit="cover"
-          lanyardWidth={0.5}
-        />
-      </div>
+      {isLargeScreen && (
+        <div className="hidden lg:block absolute inset-0">
+          <Lanyard
+            position={[0, 0, 20]}
+            gravity={[0, -40, 0]}
+            frontImage="/images/avt-front.png"
+            backImage="/images/avt-back.png"
+            imageFit="cover"
+            lanyardWidth={0.5}
+          />
+        </div>
+      )}
     </div>
   )
 }
