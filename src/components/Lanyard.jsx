@@ -1,5 +1,5 @@
 
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { Suspense, useEffect, useMemo, useRef, useState } from 'react';
 import { Canvas, extend, useFrame } from '@react-three/fiber';
 import { useGLTF, useTexture, Environment, Lightformer } from '@react-three/drei';
 import { BallCollider, CuboidCollider, Physics, RigidBody, useRopeJoint, useSphericalJoint } from '@react-three/rapier';
@@ -9,6 +9,7 @@ import { MeshLineGeometry, MeshLineMaterial } from 'meshline';
 import cardGLB from '../assets/lanyard/card.glb'
 import lanyard from '../assets/lanyard/test.png'
 import * as THREE from 'three';
+import { supportsWasmSimd } from "../utils/wasmSupport.js";
 
 extend({ MeshLineGeometry, MeshLineMaterial });
 
@@ -36,62 +37,79 @@ export default function Lanyard({
   lanyardWidth = 1
 }) {
   const [isMobile, setIsMobile] = useState(() => typeof window !== 'undefined' && window.innerWidth < 768);
+  const [simdOk, setSimdOk] = useState(null);
 
+  useEffect(() => {
+  supportsWasmSimd()
+    .then(setSimdOk)
+    .catch(() => setSimdOk(true)); // lỗi check thì cứ cho hiện bình thường, đừng chặn
+}, []);
   useEffect(() => {
     const handleResize = () => setIsMobile(window.innerWidth < 768);
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
-
+  if (simdOk === null) return null;
+  // if (simdOk === false) {
+  //   return (
+  //     <div className="relative z-0 w-full h-screen flex justify-center items-center">
+  //       {/* fallback tĩnh, không có physics */}
+  //       <img src={frontImage || '/fallback-card.png'} alt="card" className="max-h-[60vh]" />
+  //     </div>
+  //   );
+  // }
   return (
     <div className="relative z-0 w-full h-screen flex justify-center items-center transform scale-100 origin-center">
       <Canvas
         camera={{ position: position, fov: fov }}
         dpr={[1, isMobile ? 1.5 : 2]}
         gl={{ alpha: transparent }}
+        dpr={[1, isMobile ? 1 : 2]}
         onCreated={({ gl }) => gl.setClearColor(new THREE.Color(0x000000), transparent ? 0 : 1)}
       >
         <ambientLight intensity={Math.PI} />
-        <Physics gravity={gravity} timeStep={isMobile ? 1 / 30 : 1 / 60}>
-          <Band
-            isMobile={isMobile}
-            frontImage={frontImage}
-            backImage={backImage}
-            imageFit={imageFit}
-            lanyardImage={lanyardImage}
-            lanyardWidth={lanyardWidth}
-          />
-        </Physics>
-        <Environment blur={0.75}>
-          <Lightformer
-            intensity={2}
-            color="white"
-            position={[0, -1, 5]}
-            rotation={[0, 0, Math.PI / 3]}
-            scale={[100, 0.1, 1]}
-          />
-          <Lightformer
-            intensity={3}
-            color="white"
-            position={[-1, -1, 1]}
-            rotation={[0, 0, Math.PI / 3]}
-            scale={[100, 0.1, 1]}
-          />
-          <Lightformer
-            intensity={3}
-            color="white"
-            position={[1, 1, 1]}
-            rotation={[0, 0, Math.PI / 3]}
-            scale={[100, 0.1, 1]}
-          />
-          <Lightformer
-            intensity={8}
-            color="white"
-            position={[-10, 0, 14]}
-            rotation={[0, Math.PI / 2, Math.PI / 3]}
-            scale={[100, 10, 1]}
-          />
-        </Environment>
+        <Suspense fallback={null}>
+          <Physics gravity={gravity} timeStep={isMobile ? 1 / 30 : 1 / 60}>
+            <Band
+              isMobile={isMobile}
+              frontImage={frontImage}
+              backImage={backImage}
+              imageFit={imageFit}
+              lanyardImage={lanyardImage}
+              lanyardWidth={lanyardWidth}
+            />
+          </Physics>
+          <Environment blur={0.75} resolution={isMobile ? 64 : 256}>
+            <Lightformer
+              intensity={2}
+              color="white"
+              position={[0, -1, 5]}
+              rotation={[0, 0, Math.PI / 3]}
+              scale={[100, 0.1, 1]}
+            />
+            <Lightformer
+              intensity={3}
+              color="white"
+              position={[-1, -1, 1]}
+              rotation={[0, 0, Math.PI / 3]}
+              scale={[100, 0.1, 1]}
+            />
+            <Lightformer
+              intensity={3}
+              color="white"
+              position={[1, 1, 1]}
+              rotation={[0, 0, Math.PI / 3]}
+              scale={[100, 0.1, 1]}
+            />
+            <Lightformer
+              intensity={8}
+              color="white"
+              position={[-10, 0, 14]}
+              rotation={[0, Math.PI / 2, Math.PI / 3]}
+              scale={[100, 10, 1]}
+            />
+          </Environment>
+        </Suspense>
       </Canvas>
     </div>
   );
