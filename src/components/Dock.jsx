@@ -1,5 +1,5 @@
 import { motion, useMotionValue, useSpring, useTransform, AnimatePresence } from 'motion/react';
-import { Children, cloneElement, useEffect, useMemo, useRef, useState } from 'react';
+import { Children, cloneElement, Fragment, useEffect, useMemo, useRef, useState } from 'react';
 
 function DockItem({ children, className = '', onClick, mouseX, spring, distance, magnification, baseItemSize, label }) {
   const ref = useRef(null);
@@ -118,12 +118,12 @@ export default function Dock({
         aria-label="Application dock"
       >
         {items.map((item, index) => (
-          <>
+          <Fragment key={index}>
             {index === items.length - 1 && (
               <div className="w-px h-8 bg-neutral-300 dark:bg-neutral-600 mb-1 " />
             )}
             <DockItem
-              key={index}
+
               onClick={() => item.onClick()}
               className={item.className}
               mouseX={mouseX}
@@ -136,7 +136,7 @@ export default function Dock({
               <DockIcon>{item.icon}</DockIcon>
               <DockLabel>{item.label}</DockLabel>
             </DockItem>
-          </>
+          </Fragment>
         ))}
       </motion.div>
     </motion.div>

@@ -18,7 +18,7 @@ export default function Project() {
                 {dataProject.length > 0 && dataProject.map((item, index) => (
                     <FadeInSection key={index} delay={index * 0.1}>
                         <div className="rounded-lg bg-card flex flex-col overflow-hidden border dark:border-white/40 hover:shadow-lg transition-all duration-300 ease-out h-full border-gray-200 ">
-                            <div className="relative w-full h-40">
+                            <div className="relative w-full h-60 md:h-40">
                                 <img src={item.image} alt={item.name} className="w-full h-full object-cover" />
                             </div>
                             <div className="p-2 flex flex-col justify-between h-full">
