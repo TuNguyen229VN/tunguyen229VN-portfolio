@@ -8,6 +8,9 @@ export default defineConfig({
     react(),
     babel({ presets: [reactCompilerPreset()] }),
     tailwindcss(),
-  ], 
-  assetsInclude: ['**/*.glb']
+  ],
+  assetsInclude: ['**/*.glb'],
+  build: {
+    target: ['chrome89', 'edge89', 'firefox89', 'safari15'],
+  },
 })
