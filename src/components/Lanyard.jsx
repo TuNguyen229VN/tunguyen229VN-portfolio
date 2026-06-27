@@ -71,8 +71,8 @@ export default function Lanyard({
         dpr={[1, isMobile ? 1.5 : 2]}
         gl={{ alpha: transparent }}
         dpr={[1, isMobile ? 1 : 2]}
-        onCreated={({ gl }) => gl.setClearColor(new THREE.Color(0x000000), transparent ? 0 : 1)}
-        handleCreated={handleCreated}
+        // onCreated={({ gl }) => gl.setClearColor(new THREE.Color(0x000000), transparent ? 0 : 1)}
+        onCreated={handleCreated}
       >
         <ambientLight intensity={Math.PI} />
         <Suspense fallback={null}>
