@@ -22,7 +22,7 @@ export const dataSkills = ["HTML", "CSS", "JavaScript", "TypeScript", "Tailwind 
 
 export const dataProject = [
     {
-        image: "/images/pizza_card.png",
+        image: "/images/pizza.png",
         name: "Pizza Teo",
         dateCreate: "Apr 2026",
         desc: "Full-stack food ordering platform with customer and admin roles. Supports online ordering, real-time order tracking, reward points, multilingual support, and multiple payment methods through an admin management dashboard.",
@@ -31,7 +31,7 @@ export const dataProject = [
         srcCode: "https://github.com/TuNguyen229VN/pizza-order-app"
     },
     {
-        image: "/images/amazon_card.png",
+        image: "/images/amazon.png",
         name: "Amazon Clone",
         dateCreate: "Mar 2024",
         desc: "An Amazon-inspired e-commerce application that allows users to browse products, manage shopping carts, complete secure online payments, and view order history. Features authentication, product search, filtering, pagination, and multilingual support.",
@@ -49,7 +49,7 @@ export const dataProject = [
         srcCode: "https://github.com/TuNguyen229VN/sushi_website"
     },
     {
-        image: "/images/pokedex_card.png",
+        image: "/images/pokedex.png",
         name: "Pokedex Tu Nguyen",
         dateCreate: "Dec 2021",
         desc: "A Pokédex web application that provides detailed information about Pokémon, including types, evolutions, strengths, weaknesses, and stats. Features search, pagination, and detailed Pokémon information pages.",
