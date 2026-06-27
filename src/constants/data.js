@@ -72,42 +72,42 @@ export const images = [
 
 export const dataCerti = [
     {
-        image: "/images/cert1.png",
+        image: "/images/cert1.jpg",
         name: "Web Design for Everybody: Basics of Web Development & Coding",
         platform_study: "Coursera",
         date: "March 8, 2020",
         link: "https://www.coursera.org/account/accomplishments/specialization/AGA3U7P9CLDW"
     },
     {
-        image: "/images/cert2.png",
+        image: "/images/cert2.jpg",
         name: "Startup Entrepreneurship",
         platform_study: "Coursera",
         date: "July 21, 2020",
         link: "https://www.coursera.org/account/accomplishments/specialization/7GDC8DAMHQYG"
     },
     {
-        image: "/images/cert3.png",
+        image: "/images/cert3.jpg",
         name: "CertNexus Certified Ethical Emerging Technologist",
         platform_study: "Coursera",
         date: "June 1, 2022",
         link: "https://www.coursera.org/account/accomplishments/specialization/XG9AWKRNUT3T"
     },
     {
-        image: "/images/cert4.png",
+        image: "/images/cert4.jpg",
         name: "Modern Application Development with Java on AWS",
         platform_study: "Coursera",
         date: "June 4, 2022",
         link: "https://www.coursera.org/account/accomplishments/specialization/6BEXGMZ87UMG"
     },
     {
-        image: "/images/cert5.png",
+        image: "/images/cert5.jpg",
         name: "Project Management Principles and Practices",
         platform_study: "Coursera",
         date: "January 20, 2022",
         link: "https://www.coursera.org/account/accomplishments/specialization/B3FRJ75YG5SN"
     },
     {
-        image: "/images/cert6.png",
+        image: "/images/cert6.jpg",
         name: "Computer Communications",
         platform_study: "Coursera",
         date: "November 7, 2020",
