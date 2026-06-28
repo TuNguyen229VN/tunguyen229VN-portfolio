@@ -14,7 +14,8 @@ export const dataEducation = [
         image: "/images/fptu_logo.png",
         nameSchool: "FPT University",
         major: "Software Engineering",
-        yearStury: "Sep 2019 - Sep 2023"
+        yearStury: "Sep 2019 - Sep 2023",
+        linkEdu:"https://daihoc.fpt.edu.vn/hcm/",
     }
 ]
 
