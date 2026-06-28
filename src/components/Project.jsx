@@ -21,7 +21,7 @@ export default function Project() {
                             <div className="relative w-full h-60 md:h-40">
                                 <img src={item.image} alt={item.name} className="w-full h-full object-cover" />
                             </div>
-                            <div className="p-2 flex flex-col justify-between h-full">
+                            <div className="p-2 flex flex-col justify-between h-max md:h-full">
                                 <div>
                                     <p className="font-semibold transition-colors duration-300">{item.name}</p>
                                     <p className="text-xs font-medium mt-1">{item.dateCreate}</p>

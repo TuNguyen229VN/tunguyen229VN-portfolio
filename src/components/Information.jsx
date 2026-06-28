@@ -18,7 +18,9 @@ export default function Information() {
                     </FadeInSection>
                 </div>
                 <div className="block md:hidden shrink-0">
-                    <img src="/images/tu1.jpg" alt="tu" className="w-28 h-28 sm:w-36 sm:h-36 object-cover rounded-full"/>
+                    <FadeInSection delay={0.2}>
+                        <img src="/images/tu1.jpg" alt="tu" className="w-28 h-28 sm:w-36 sm:h-36 object-cover rounded-full" />
+                    </FadeInSection>
                 </div>
                 <FadeInSection delay={0.2}>
                     <div style={{ width: 200, height: 200 }} className="shrink-0 -rotate-6 md:block hidden">
