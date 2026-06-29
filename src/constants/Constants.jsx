@@ -4,7 +4,10 @@ import { MdDarkMode, MdEmail, MdLightMode } from "react-icons/md";
 
 export const dockItems = (isDark, toggleDark) => [
   { icon: <GoHomeFill size={18} />, label: 'Home', onClick: () => window.location.href = "/" },
-  { icon: <FaLinkedin size={18} />, label: 'LinkedIn', onClick: () => window.open("https://www.linkedin.com/in/nguyentu229vn/", "_blank") },
+  { icon: <FaLinkedin size={18} />, label: 'LinkedIn', onClick: () => {
+     console.log("Github clicked");
+    window.open("https://www.linkedin.com/in/nguyentu229vn/", "_blank")
+  } },
   { icon: <FaGithub size={18} />, label: 'Github', onClick: () => window.open("https://github.com/TuNguyen229VN", "_blank") },
   { icon: <FaFacebook size={18} />, label: 'Facebook', onClick: () => window.open("https://www.facebook.com/tunguyen229VN/", "_blank") },
   {
