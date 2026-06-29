@@ -27,7 +27,7 @@ export const dataProject = [
         name: "Pizza Teo",
         dateCreate: "Apr 2026",
         desc: "Full-stack food ordering platform with customer and admin roles. Supports online ordering, real-time order tracking, reward points, multilingual support, and multiple payment methods through an admin management dashboard.",
-        tech: ["Next.js 14", "React 18", "Tailwind CSS", "MongoDB", "Pusher", "Stripe/ Paypal/ Zalo/ Momo Sandbox", "Leaflet.js", "Swiper.js", "Framer Motion", "next-intl", "dnd-kit", "Nodemailer"],
+        tech: ["Next.js 14", "React 18", "Tailwind CSS", "MongoDB", "Pusher", "Stripe/ Paypal/ Zalo/ Momo Sandbox", "Leaflet.js", "Swiper.js", "Framer Motion", "next-intl", "dnd-kit", "Nodemailer","Recharts"],
         deployLink: "https://pizzateo.vercel.app/",
         srcCode: "https://github.com/TuNguyen229VN/pizza-order-app"
     },
