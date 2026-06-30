@@ -31,7 +31,7 @@ export const dockItems = (isDark, toggleDark) => [
   },
   {
     icon: <MdEmail size={18} />, label: 'Email',
-    onClick: () => openLink("mailto:tunguyen2209.it.work@gmail.com", false)
+    onClick: () => openLink("mailto:tunguyen2209.it.work@gmail.com")
   },
   {
     icon: <FaFilePdf size={18} />, label: 'Resume',
