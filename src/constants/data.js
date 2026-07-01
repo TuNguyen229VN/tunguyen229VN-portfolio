@@ -23,6 +23,15 @@ export const dataSkills = ["HTML", "CSS", "JavaScript", "TypeScript", "Tailwind 
 
 export const dataProject = [
     {
+        image: "/images/spylt.png",
+        name: "Spylt Landing Page",
+        dateCreate: "Jun 2026",
+        desc: "Modern Awwwards-style landing page with smooth GSAP animations, scroll-based storytelling, and responsive design.",
+        tech: ["React 19", "Vite", "Tailwind CSS", "GSAP", "react-responsive"],
+        deployLink: "https://spylt-landing-page-snowy.vercel.app/",
+        srcCode: "https://github.com/TuNguyen229VN/spylt-landing-page"
+    },
+    {
         image: "/images/pizza.png",
         name: "Pizza Teo",
         dateCreate: "Apr 2026",
