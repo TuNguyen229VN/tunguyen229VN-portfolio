@@ -4,8 +4,10 @@ import { dataProject } from "../constants/data";
 import { MdLanguage } from "react-icons/md";
 import FadeInSection from "./FadeInSection";
 import { getYoutubeId, isYoutubeLink } from "../utils/getYoutubeThumbnail";
+import { useMediaQuery } from "react-responsive";
 
 export default function Project() {
+    const isTablet = useMediaQuery({ query: '(max-width: 768px)' });
     return (
         <div className="mt-20">
             <FadeInSection>
@@ -20,7 +22,7 @@ export default function Project() {
                     <FadeInSection key={index} delay={index * 0.1}>
                         <div className="rounded-lg bg-card flex flex-col overflow-hidden border dark:border-white/40 hover:shadow-lg transition-all duration-300 ease-out h-full border-gray-200 ">
                             <a href={item.deployLink} target="_blank" rel="noopener noreferrer" className="relative w-full h-60 md:h-40 shrink-0">
-                                {item.video ? (
+                                {!isTablet ? (
                                     isYoutubeLink(item.video) ? (
                                         <iframe
                                             src={`https://www.youtube.com/embed/${getYoutubeId(item.video)}?autoplay=1&mute=1&loop=1&playlist=${getYoutubeId(item.video)}&controls=0&showinfo=0&modestbranding=1&rel=0&playsinline=1`}
