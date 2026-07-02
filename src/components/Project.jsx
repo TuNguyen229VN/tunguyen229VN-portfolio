@@ -3,6 +3,7 @@ import { FaGithub } from "react-icons/fa";
 import { dataProject } from "../constants/data";
 import { MdLanguage } from "react-icons/md";
 import FadeInSection from "./FadeInSection";
+import { getYoutubeId, isYoutubeLink } from "../utils/getYoutubeThumbnail";
 
 export default function Project() {
     return (
@@ -18,10 +19,32 @@ export default function Project() {
                 {dataProject.length > 0 && dataProject.map((item, index) => (
                     <FadeInSection key={index} delay={index * 0.1}>
                         <div className="rounded-lg bg-card flex flex-col overflow-hidden border dark:border-white/40 hover:shadow-lg transition-all duration-300 ease-out h-full border-gray-200 ">
-                            <div className="relative w-full h-60 md:h-40">
-                                <img src={item.image} alt={item.name} className="w-full h-full object-cover" />
-                            </div>
-                            <div className="p-2 flex flex-col justify-between h-max md:h-full">
+                            <a href={item.deployLink} target="_blank" rel="noopener noreferrer" className="relative w-full h-60 md:h-40 shrink-0">
+                                {item.video ? (
+                                    isYoutubeLink(item.video) ? (
+                                        <iframe
+                                            src={`https://www.youtube.com/embed/${getYoutubeId(item.video)}?autoplay=1&mute=1&loop=1&playlist=${getYoutubeId(item.video)}&controls=0&showinfo=0&modestbranding=1&rel=0&playsinline=1`}
+                                            title={item.name}
+                                            allow="autoplay; encrypted-media"
+                                            className="w-full h-full object-cover pointer-events-none"
+                                            frameBorder="0"
+                                        />
+                                    ) : (
+                                        <video
+                                            src={item.video}
+                                            autoPlay
+                                            muted
+                                            loop
+                                            playsInline
+                                            className="w-full h-full object-cover"
+                                        />
+                                    )
+                                ) : (
+                                    <img src={item.image} alt={item.name} className="w-full h-full object-cover" />
+                                )}
+
+                            </a>
+                            <div className="p-4 flex flex-col justify-between h-max md:h-full">
                                 <div>
                                     <p className="font-semibold transition-colors duration-300">{item.name}</p>
                                     <p className="text-xs font-medium mt-1">{item.dateCreate}</p>

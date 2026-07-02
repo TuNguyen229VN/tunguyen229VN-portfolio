@@ -15,7 +15,7 @@ export const dataEducation = [
         nameSchool: "FPT University",
         major: "Software Engineering",
         yearStury: "Sep 2019 - Sep 2023",
-        linkEdu:"https://daihoc.fpt.edu.vn/hcm/",
+        linkEdu: "https://daihoc.fpt.edu.vn/hcm/",
     }
 ]
 
@@ -26,19 +26,21 @@ export const dataProject = [
         image: "/images/spylt.png",
         name: "Spylt Landing Page",
         dateCreate: "Jun 2026",
-        desc: "Modern Awwwards-style landing page with smooth GSAP animations, scroll-based storytelling, and responsive design.",
+        desc: "Awwwards-style product landing page for a fictional beverage brand, featuring cinematic scroll storytelling with GSAP — parallax, clip-path reveals, ScrollTrigger/ScrollSmoother, pinned sections, and animated typography.",
         tech: ["React 19", "Vite", "Tailwind CSS", "GSAP", "react-responsive"],
         deployLink: "https://spylt-landing-page-snowy.vercel.app/",
-        srcCode: "https://github.com/TuNguyen229VN/spylt-landing-page"
+        srcCode: "https://github.com/TuNguyen229VN/spylt-landing-page",
+        video: "/videos/spylt.webm"
     },
     {
         image: "/images/pizza.png",
         name: "Pizza Teo",
         dateCreate: "Apr 2026",
         desc: "Full-stack food ordering platform with customer and admin roles. Supports online ordering, real-time order tracking, reward points, multilingual support, and multiple payment methods through an admin management dashboard.",
-        tech: ["Next.js 14", "React 18", "Tailwind CSS", "MongoDB", "Pusher", "Stripe/ Paypal/ Zalo/ Momo Sandbox", "Leaflet.js", "Swiper.js", "Framer Motion", "next-intl", "dnd-kit", "Nodemailer","Recharts"],
+        tech: ["Next.js 14", "React 18", "Tailwind CSS", "MongoDB", "Pusher", "Stripe/ Paypal/ Zalo/ Momo Sandbox", "Leaflet.js", "Swiper.js", "Framer Motion", "next-intl", "dnd-kit", "Nodemailer", "Recharts"],
         deployLink: "https://pizzateo.vercel.app/",
-        srcCode: "https://github.com/TuNguyen229VN/pizza-order-app"
+        srcCode: "https://github.com/TuNguyen229VN/pizza-order-app",
+        video: "https://www.youtube.com/watch?v=K3DwZwkLMJ4"
     },
     {
         image: "/images/amazon.png",
@@ -47,7 +49,8 @@ export const dataProject = [
         desc: "An Amazon-inspired e-commerce application that allows users to browse products, manage shopping carts, complete secure online payments, and view order history. Features authentication, product search, filtering, pagination, and multilingual support.",
         tech: ["ReactJS", "Firebase", "Material UI", "Stripe", "axios", "moment.js", "react-flickity", "react-paginate", "react-photoswipe-gallery", "react-toastify", "react-i18next"],
         deployLink: "https://amazon-clone-tunguyen.vercel.app/",
-        srcCode: "https://github.com/TuNguyen229VN/amazon-clone-tunguyen"
+        srcCode: "https://github.com/TuNguyen229VN/amazon-clone-tunguyen",
+        video: "https://www.youtube.com/watch?v=RDNX_2NObH8"
     },
     {
         image: "https://raw.githubusercontent.com/TuNguyen229VN/sushi_website/main/preview.png",
@@ -56,7 +59,8 @@ export const dataProject = [
         desc: "A responsive sushi restaurant landing page showcasing menu sections, smooth scrolling, scroll animations, and dark/light mode. Built with a mobile-first approach for an optimized experience across all devices.",
         tech: ["HTML", "CSS", "JavaScript"],
         deployLink: "https://sushi-website-ecru.vercel.app/",
-        srcCode: "https://github.com/TuNguyen229VN/sushi_website"
+        srcCode: "https://github.com/TuNguyen229VN/sushi_website",
+        video: "/videos/sushi.webm"
     },
     {
         image: "/images/pokedex.png",
@@ -65,7 +69,8 @@ export const dataProject = [
         desc: "A Pokédex web application that provides detailed information about Pokémon, including types, evolutions, strengths, weaknesses, and stats. Features search, pagination, and detailed Pokémon information pages.",
         tech: ["ReactJS", "axios", "React Bootstrap", "SweetAlert"],
         deployLink: "https://pokedex-tunguyen.vercel.app/",
-        srcCode: "https://github.com/TuNguyen229VN/pokedex-tunguyen"
+        srcCode: "https://github.com/TuNguyen229VN/pokedex-tunguyen",
+        video: "/videos/pokemon.webm"
     }
 ]
 
